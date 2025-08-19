@@ -1,0 +1,559 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #8e0e3d;
+    --secondary-color: #5e0a25;
+    --accent-color: #c7b299;
+    --light-color: #f8f4f1;
+    --dark-color: #2c1918;
+    --success-color: #4a8332;
+    --warning-color: #d9a404;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Raleway', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(142, 14, 61, 0.2);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 600;
+    transition: color 0.3s;
+    position: relative;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--primary-color);
+}
+
+nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    bottom: -5px;
+    left: 0;
+}
+
+/* Main Content */
+main {
+    padding: 40px 0;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.hero-content h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 500px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Review Form */
+.review-form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 60px;
+}
+
+.review-form h2 {
+    font-family: var(--font-heading);
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    resize: vertical;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(142, 14, 61, 0.3);
+    outline: none;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Features Section */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.feature-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+.feature-card p {
+    color: #666;
+}
+
+/* Result Section */
+.result-section {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.result-section h2 {
+    font-family: var(--font-heading);
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.result-card {
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid var(--primary-color);
+}
+
+.result-card.above-average {
+    background-color: rgba(74, 131, 50, 0.1);
+    border-left-color: var(--success-color);
+}
+
+.result-card.below-average {
+    background-color: rgba(217, 164, 4, 0.1);
+    border-left-color: var(--warning-color);
+}
+
+.result-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.result-icon {
+    margin-right: 15px;
+    font-size: 2rem;
+}
+
+.above-average .result-icon {
+    color: var(--success-color);
+}
+
+.below-average .result-icon {
+    color: var(--warning-color);
+}
+
+.result-header h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+}
+
+.above-average .result-header h3 {
+    color: var(--success-color);
+}
+
+.below-average .result-header h3 {
+    color: var(--warning-color);
+}
+
+.result-details {
+    margin-top: 20px;
+}
+
+.confidence {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+.above-average .progress {
+    background-color: var(--success-color);
+}
+
+.below-average .progress {
+    background-color: var(--warning-color);
+}
+
+.description-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.description-card h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 15px;
+    color: var(--dark-color);
+    font-size: 1.3rem;
+}
+
+.actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* About Section */
+.about-section {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.about-section h2 {
+    font-family: var(--font-heading);
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 2.2rem;
+}
+
+.content-container {
+    display: flex;
+    margin-bottom: 50px;
+    gap: 30px;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-content h3,
+.model-info h3,
+.dataset-info h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.about-content p,
+.model-info p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.model-info {
+    margin-bottom: 50px;
+}
+
+.model-steps {
+    margin-top: 30px;
+}
+
+.step {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    font-family: var(--font-heading);
+    margin-bottom: 10px;
+    color: var(--dark-color);
+    font-size: 1.3rem;
+}
+
+.dataset-info ul {
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.dataset-info ul li {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid rgba(142, 14, 61, 0.2);
+    color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+    }
+    
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+    .content-container {
+        flex-direction: column;
+    }
+    
+    .about-image {
+        margin-bottom: 30px;
+    }
+    
+    header {
+        flex-direction: column;
+    }
+    
+    nav ul {
+        margin-top: 20px;
+    }
+    
+    nav ul li {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
+
+/* Add these styles to your existing style.css file */
+
+/* Styling for comparison form */
+.form-group + .form-group {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e2d5c5;
+}
+
+/* Progress bar styling */
+.progress-bar {
+    height: 10px;
+    background-color: #e2e2e2;
+    border-radius: 5px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: #5a2323;
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+}
+
+.confidence {
+    text-align: right;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Above average card styling */
+.above-average .result-header {
+    color: #2e7d32;
+}
+
+/* Below average card styling */
+.below-average .result-header {
+    color: #c62828;
+}
+
+/* Warning card styling */
+.warning .result-header {
+    color: #ff8f00;
+}
+
+/* Result header styling */
+.result-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.result-icon {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+.description-area {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.description-area h4 {
+    margin-bottom: 10px;
+    color: #5a2323;
+}

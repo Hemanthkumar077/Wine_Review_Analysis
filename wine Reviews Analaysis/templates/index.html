@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine Review Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        .warning-message {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-wine-glass-alt"></i>
+                <h1>Wine Review Analysis</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}" class="active">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                {% for message in messages %}
+                  <div class="warning-message">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p>{{ message }}</p>
+                  </div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+            
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Compare Wine Descriptions</h2>
+                    <p>Our machine learning model analyzes your wine descriptions and predicts which one is likely to be rated higher.</p>
+                </div>
+                <div class="hero-image">
+                    <img src="{{ url_for('static', filename='img/wine-hero.png') }}" alt="Wine Image">
+                </div>
+            </section>
+
+            <section class="review-form">
+                <h2>Enter Two Wine Descriptions to Compare</h2>
+                <form action="{{ url_for('compare') }}" method="post">
+                    <div class="form-group">
+                        <label for="description1">Wine Description #1:</label>
+                        <textarea id="description1" name="description1" rows="6" required placeholder="Describe the first wine's taste, smell, look, feel, etc..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="description2">Wine Description #2:</label>
+                        <textarea id="description2" name="description2" rows="6" required placeholder="Describe the second wine's taste, smell, look, feel, etc..."></textarea>
+                    </div>
+                    <button type="submit" class="btn">Compare Descriptions</button>
+                </form>
+            </section>
+
+            <section class="features">
+                <div class="feature-card">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>Wine Comparison</h3>
+                    <p>Compare two wine descriptions to see which one is likely to be rated higher.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Machine Learning</h3>
+                    <p>Our model is trained on 130k+ wine reviews for accurate analysis.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>Instant Results</h3>
+                    <p>Get instant prediction based on your wine descriptions.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Wine Review Analysis. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

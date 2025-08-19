@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine Review Analysis - About</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-wine-glass-alt"></i>
+                <h1>Wine Review Analysis</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}" class="active">About</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="about-section">
+                <h2>About Our Wine Review System</h2>
+                
+                <div class="content-container">
+                    <div class="about-image">
+                        <img src="{{ url_for('static', filename='img/wine-history.jpg') }}" alt="Wine History">
+                    </div>
+                    
+                    <div class="about-content">
+                        <h3>The History of Wine</h3>
+                        <p>The earliest archaeological evidence of wine grapes has been found at sites in Georgia (c. 6000 BC), Iran (c. 5000 BC), Greece (c. 4500 BC), and Sicily (c. 4000 BC). The oldest evidence of wine production has been found in Armenia (c. 4100 BC).</p>
+                        <p>Wine production and consumption increased, burgeoning from the 15th century onwards as part of European expansion. Despite the devastating 1887 phylloxera louse infestation, modern science and technology adapted and industrial wine production and wine consumption now occur throughout the world.</p>
+                    </div>
+                </div>
+                
+                <div class="model-info">
+                    <h3>Our Prediction Model</h3>
+                    <p>Our wine review analysis system uses Natural Language Processing (NLP) and Machine Learning to predict whether a wine will be rated above or below average based on its description.</p>
+                    
+                    <div class="model-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Text Preprocessing</h4>
+                                <p>We clean and normalize wine descriptions by removing non-alphabetic characters, converting to lowercase, removing stopwords, and lemmatizing words.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Feature Extraction</h4>
+                                <p>We use the CountVectorizer technique to convert the processed text into numerical features, focusing on the 1,500 most frequent words.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Classification</h4>
+                                <p>We employ a Gaussian Naive Bayes classifier that was trained on over 130,000 wine reviews with an accuracy of approximately 77%.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dataset-info">
+                    <h3>Dataset Information</h3>
+                    <p>Our model is trained on a dataset containing over 130,000 wine reviews from WineEnthusiast. The dataset includes various features such as:</p>
+                    <ul>
+                        <li><strong>Country:</strong> The country of origin</li>
+                        <li><strong>Description:</strong> Sommelier descriptions of taste, smell, look, and feel</li>
+                        <li><strong>Points:</strong> WineEnthusiast rating on a scale of 1-100</li>
+                        <li><strong>Price:</strong> Cost per bottle</li>
+                        <li><strong>Variety:</strong> Type of grapes used</li>
+                        <li><strong>Winery:</strong> The producer of the wine</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Wine Review Analysis. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
